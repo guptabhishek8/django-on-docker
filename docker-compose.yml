@@ -10,7 +10,7 @@ services:
     volumes:
       - django_storage:/usr/src/app/django_main
     ports:
-      - 8000:8000
+      - 8000:8080
     env_file:
       - ./.env.dev
 
