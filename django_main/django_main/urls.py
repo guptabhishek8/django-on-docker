@@ -1,4 +1,4 @@
-"""django_main URL Configuration
+"""panelwithfirebase URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
 
+from . import views
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
+    url(r'^$', views.signin),
+    url(r'^postsign/', views.postsign),
+    url(r'^logout/', views.logout, name="logout"),
+    url(r'^signup/', views.signUp, name="signup"),
+    url(r'^postsignup/', views.postsignup, name="postsignup"),
+
 ]
