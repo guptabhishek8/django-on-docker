@@ -1,5 +1,5 @@
 from django.shortcuts import render
-import pyfireconnect
+from pyrebase import pyrebase
 from django.contrib import auth
 
 Config = {
@@ -13,7 +13,7 @@ Config = {
     'measurementId': "G-58S94BH5NE"
 }
 
-default_app = pyfireconnect.initialize(Config)
+default_app = pyrebase.initialize_app(Config)
 
 authi = default_app.auth()
 databse = default_app.database()
